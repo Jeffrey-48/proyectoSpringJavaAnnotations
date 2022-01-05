@@ -24,10 +24,14 @@ public class UsoAnnotations2 {
 //			System.out.println(carlos + "\n" + andres);
 //		}
 		
-		Empleado empleado = contexto.getBean("directorFinanciero", Empleado.class);
+//		Empleado empleado = contexto.getBean("directorFinanciero", Empleado.class);
+//		
+//		System.out.println(empleado.getTareas());
+//		System.out.println(empleado.getInforme());
 		
-		System.out.println(empleado.getTareas());
-		System.out.println(empleado.getInforme());
+		DirectorFinanciero empleado = contexto.getBean("directorFinanciero", DirectorFinanciero.class);
+		System.out.println(empleado.getEmail());
+		System.out.println(empleado.getNombreEmpresa());
 		// Cerrar contexto
 		contexto.close();
 	}

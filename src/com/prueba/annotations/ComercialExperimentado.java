@@ -8,11 +8,11 @@ public class ComercialExperimentado implements Empleado {
 
 	private CreacionInformeFinanciero nuevoInforme;
 	
-	@Autowired
-	public ComercialExperimentado(CreacionInformeFinanciero nuevoInforme) {
-		super();
-		this.nuevoInforme = nuevoInforme;
-	}
+//	@Autowired
+//	public ComercialExperimentado(CreacionInformeFinanciero nuevoInforme) {
+//		super();
+//		this.nuevoInforme = nuevoInforme;
+//	}
 
 	@Override
 	public String getTareas() {
@@ -26,4 +26,10 @@ public class ComercialExperimentado implements Empleado {
 		return nuevoInforme.getInformeFinanciero();
 	}
 
+	@Autowired
+	public void setNuevoInforme(CreacionInformeFinanciero nuevoInforme) {
+		this.nuevoInforme = nuevoInforme;
+	}
+	
+	
 }

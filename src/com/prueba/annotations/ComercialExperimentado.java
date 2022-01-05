@@ -1,9 +1,18 @@
 package com.prueba.annotations;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component("ComercialExperimentado")
 public class ComercialExperimentado implements Empleado {
+
+	private CreacionInformeFinanciero nuevoInforme;
+	
+	@Autowired
+	public ComercialExperimentado(CreacionInformeFinanciero nuevoInforme) {
+		super();
+		this.nuevoInforme = nuevoInforme;
+	}
 
 	@Override
 	public String getTareas() {
@@ -14,7 +23,7 @@ public class ComercialExperimentado implements Empleado {
 	@Override
 	public String getInforme() {
 		// TODO Auto-generated method stub
-		return "Informe generado por el comercial";
+		return nuevoInforme.getInformeFinanciero();
 	}
 
 }
